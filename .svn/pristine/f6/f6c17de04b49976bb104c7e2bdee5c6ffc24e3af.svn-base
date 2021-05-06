@@ -1,0 +1,76 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using HanaMicron.COMS.BLL;
+using HanaMicron.COMS.Model;
+using HanaMicron.COMS.Utility;
+
+public partial class _Default : System.Web.UI.Page
+{
+	Office bll = new Office();
+    protected void Page_Load(object sender, EventArgs e)
+    {
+		// 관리자 체크
+		EmployeeInfo loginEmployee = new EmployeeInfo();
+		loginEmployee = (EmployeeInfo)Session["loginMember"];
+		if (loginEmployee == null)
+		{
+			Response.Redirect("~/login.aspx", true);
+		}
+
+		if (loginEmployee.ManagerLevel < 2)
+		{
+			Response.Redirect("~/login.aspx", true);
+		}
+
+        if (Page.IsPostBack)
+        {
+			OfficeInfo office = new OfficeInfo();
+			office.OfficeCode = Convert.ToInt32(Request.QueryString["officeCode"]);
+			office.OfficeName = txtOfficeName.Text;
+            office.Status = txtStatus.Text;
+
+            // 수정하기 sửa
+            if (mode.Value.Equals("modify"))
+            {
+				int result = bll.updateOffice(office);
+                Response.Redirect("officeList.aspx");
+            }
+            // 등록하기 đăng ký
+            else
+            {
+				int result = bll.insertOffice(office);
+				Response.Redirect("officeList.aspx"); ;
+            }
+        }
+        else
+        {   
+            if (Request.QueryString["mode"].Equals("modify"))
+            {
+				OfficeInfo office = new OfficeInfo();
+				office = bll.selectOffice(Request.QueryString["officeCode"]);
+
+				txtOfficeName.Text = office.OfficeName;
+                txtStatus.Text = office.Status;
+
+				lableCodeName.Text = " Sửa thông tin (정보 수정하기) : " + office.OfficeName ;
+                mode.Value = Request.QueryString["mode"];
+            }
+            else
+            {
+                lableCodeName.Text = "Đăng ký (건물 등록하기)";
+                mode.Value = Request.QueryString["mode"];
+            }   
+            
+        }
+        
+        
+    }
+}

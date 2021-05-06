@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+	<siteMapNode url="~/admin/Default.aspx" title="Administrator Main (관리자 메인)"  description="">
+		<siteMapNode url="~/main/visit/listVisit.aspx" title="Trang chủ (메인으로)" description="" />
+		<siteMapNode url="~/admin/visitData/visitDataList.aspx?type=visitData" title="Mục lục đến thăm (내방 목록)" description="" />
+		<siteMapNode url="~/admin/takeOutData/takeOutDataList.aspx" title="Mục lục tài sản ra/vào (반출입 목록)" description="" />
+    <!--<siteMapNode url="~/main/securityCard/listSecCard.aspx?type=SecAdmin" title="Mục lục đăng ký ra vào (Cardrider) (출입(카드리더기)등록 목록)" description="" />-->
+   	<siteMapNode url="" title="Thông tin khách thăm (내방객 정보)"  description="">
+			<siteMapNode url="~/admin/visitor/visitorList.aspx" title="Mục lục khách thăm (내방객 목록)"  description="" />
+			<siteMapNode url="~/admin/visitor/visitorRejectList.aspx" title="Mục lục từ chối đến thăm (방문 거부자 목록)"  description="">
+			</siteMapNode>
+		</siteMapNode>
+		<siteMapNode url="" title="Quản lý quyền hạn (권한 관리)">
+			<!--<siteMapNode url="~/admin/approve/approveList.aspx" title="Quản lý người phê duyệt (결재자 관리)" description="" />-->
+			<siteMapNode url="~/admin/manager/managerList.aspx" title="Quản lý Administrator (관리자 관리)" description="" />
+			<siteMapNode url="~/admin/manager/securityList.aspx" title="Quản lý nhân viên bảo an (보안요원 관리)" description="" />
+      <siteMapNode url="~/admin/manager/freepassList.aspx" title="Quản lý Free pass (Free pass 관리)" description="" />
+		</siteMapNode>
+		<siteMapNode url="" title="Quản lý code cơ bản (기본 코드 관리)" description="">
+			<siteMapNode url="~/admin/takeOutObject/takeOutObjectList.aspx" title="Mục đích mang ra (반출 목적)"  description="" />
+			<siteMapNode url="~/admin/takeOutPathStart/takeOutPathStartList.aspx" title="Điểm đầu lộ trình mang ra (반출 경로 시작지점)"  description="" />
+			<siteMapNode url="~/admin/takeOutPathEnd/takeOutPathEndList.aspx" title="Điểm đến lộ trình mang ra (반출 경로 목적지점)"  description="" />
+			<siteMapNode url="~/admin/disApprovalCategory/disApprovalCategoryList.aspx" title="Lý do từ chối (불가 사유)"  description="" />
+			<siteMapNode url="~/admin/unit/unitList.aspx" title="Đơn vị (단위)"  description="" />
+			<siteMapNode url="~/admin/takeOutItemCategory/takeOutItemCategoryList.aspx" title="Phân loại vật phẩm (물품 분류)"  description="" />
+			<siteMapNode url="~/admin/car/carDataList.aspx" title="Quản lý xe (차량 관리)"  description="" />
+			<siteMapNode url="~/admin/car/carCategoryList.aspx" title="Quản lý loại xe (차종 관리) "  description="" />
+			<siteMapNode url="~/admin/visitObject/visitObjectList.aspx" title="Mục đích đến (방문 목적)" description="" />
+			<siteMapNode url="~/admin/office/officeList.aspx" title="Quản lý tòa nhà (건물명 관리)" description="" />
+			<siteMapNode url="" title="Thông tin công ty (업체 정보)"  description="">
+				<siteMapNode url="~/admin/company/companyList.aspx" title="Mục lục công ty (업체 목록) "  description="" />
+				<siteMapNode url="~/admin/company/requestList.aspx" title="Quản lý đăng ký (등록 신청 관리)"  description="">
+				</siteMapNode>
+			</siteMapNode>
+		</siteMapNode>
+
+    <siteMapNode url="~/admin/Registration/Registration.aspx" title="Registration"></siteMapNode>
+    
+    
+	</siteMapNode>
+ 
+</siteMap>

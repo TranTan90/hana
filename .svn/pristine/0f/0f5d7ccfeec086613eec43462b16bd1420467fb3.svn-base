@@ -1,0 +1,191 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace HanaMicron.COMS.Model
+{
+	/// <summary>
+	/// 회사 정보
+	/// </summary>
+    public class CompanyInfo
+    {
+        #region 변수 선언
+        private int companyCode;
+        private String companyName;
+        private String regNumber1;
+        private String regNumber2;
+        private String regNumber3;
+        private String phone1;
+        private String phone2;
+        private String phone3;
+        private String masterName;
+        private String address;
+        private DateTime regDate;
+		private Int32 approve;
+		private String employeeCode;
+		private String employeeName;
+        private String companyManagementNo;
+        private String companyStartNo;
+        private String employeeDept;
+
+        #endregion
+
+        #region 생성자
+        public CompanyInfo()
+        {
+        }
+
+        public CompanyInfo(
+            int companyCode, String companyName, String regNumber1, String regNumber2, String regNumber3,
+            String phone1, String phone2, String phone3,String masterName,String address,DateTime regDate,Int32 approve,
+            String employeeCode, String employeeName, String companyManagementNo, String companyStartNo, String employeeDept
+            )
+        {
+            this.companyCode = companyCode;
+            this.companyName = companyName;
+            this.regNumber1 = regNumber1;
+            this.regNumber2 = regNumber2;
+            this.regNumber3 = regNumber3;
+            this.phone1 = phone1;
+            this.phone2 = phone2;
+            this.phone3 = phone3;
+            this.masterName = masterName;
+            this.address = address;
+            this.regDate = regDate;
+			this.approve = approve;
+			this.employeeCode = employeeCode;
+			this.employeeName = employeeName;
+            this.companyManagementNo = companyManagementNo;
+            this.companyStartNo = companyStartNo;
+            this.employeeDept = employeeDept;
+        }
+        #endregion
+
+        #region get,set
+        public int CompanyCode
+        {
+            get { return this.companyCode; }
+            set { this.companyCode = value; }
+        }
+
+        public String CompanyName
+        {
+            get { return this.companyName; }
+            set { this.companyName = value; }
+        }
+
+        public String RegNumber1
+        {
+            get { return this.regNumber1; }
+            set { this.regNumber1 = value; }
+        }
+
+        public String RegNumber2
+        {
+            get { return this.regNumber2; }
+            set { this.regNumber2 = value; }
+        }
+
+        public String RegNumber3
+        {
+            get { return this.regNumber3; }
+            set { this.regNumber3 = value; }
+        }
+
+        public String Phone1
+        {
+            get { return this.phone1; }
+            set { this.phone1 = value; }
+        }
+
+        public String Phone2
+        {
+            get { return this.phone2; }
+            set { this.phone2 = value; }
+        }
+
+        public String Phone3
+        {
+            get { return this.phone3; }
+            set { this.phone3 = value; }
+        }
+
+        public String MasterName
+        {
+            get { return this.masterName; }
+            set { this.masterName = value; }
+        }
+        public String Address
+        {
+            get { return this.address; }
+            set { this.address = value; }
+        }
+
+        public DateTime RegDate
+        {
+            get { return this.regDate; }
+            set { this.regDate = value; }
+        }
+
+		public int Approve
+		{
+			get { return this.approve; }
+			set { this.approve = value; }
+		}
+
+		public String EmployeeCode
+		{
+			get { return this.employeeCode; }
+			set { this.employeeCode = value; }
+		}
+
+		public String EmployeeName
+		{
+			get { return this.employeeName; }
+			set { this.employeeName = value; }
+		}
+
+        public String EmployeeDept
+        {
+            get { return this.employeeDept; }
+            set { this.employeeDept = value; }
+        }
+
+        public String CompanyManagementNo
+        {
+            get { return this.companyManagementNo; }
+            set { this.companyManagementNo = value; }
+        }
+
+        public String CompanyStartNo
+        {
+            get { return this.companyStartNo; }
+            set { this.companyStartNo = value; }
+        }
+
+        public String ToString()
+        {
+            StringBuilder str = new StringBuilder();
+
+            str.Append("companyCode : " + companyCode + "\n");
+            str.Append("companyName : " + companyName + "\n");
+            str.Append("regNumber1 : " + regNumber1 + "\n");
+            str.Append("regNumber2 : " + regNumber2 + "\n");
+            str.Append("regNumber3 : " + regNumber3 + "\n");
+            str.Append("phone1 : " + phone1 + "\n");
+            str.Append("phone2 : " + phone2 + "\n");
+            str.Append("phone3 : " + phone3 + "\n");
+            str.Append("masterName : " + masterName + "\n");
+            str.Append("address : " + address + "\n");
+			str.Append("regDate : " + regDate + "\n");
+			str.Append("approve : " + approve + "\n");
+			str.Append("employeeCode : " + employeeCode + "\n");
+			str.Append("employeeName : " + employeeName + "\n");
+            str.Append("companyManagementNo : " + companyManagementNo + "\n");
+            str.Append("companyStartNo : " + companyStartNo + "\n");
+
+            return str.ToString();
+        }
+        #endregion
+    }
+}

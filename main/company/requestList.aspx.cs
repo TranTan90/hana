@@ -1,0 +1,93 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using HanaMicron.COMS.BLL;
+using HanaMicron.COMS.Model;
+
+public partial class main_company_requestList : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+		// 로그인 체크 check login
+		EmployeeInfo loginEmployee = new EmployeeInfo();
+		loginEmployee = (EmployeeInfo)Session["loginMember"];
+		if (loginEmployee == null)
+		{
+			Response.Redirect("~/login.aspx", true);
+		}
+
+		Company bll = new Company();
+		Int32 totalCount = bll.getCompanyTotal(txtKeyWord.Text, txtKey.Text, 0, this.Context.User.Identity.Name);
+		Label1.Text = totalCount.ToString();
+
+		GridView1.DataSource =  bll.getCompanyList(txtKeyWord.Text, txtKey.Text, 0, this.Context.User.Identity.Name);
+		GridView1.DataBind();
+    }
+
+	protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+	{
+		if (e.Row.RowType == DataControlRowType.Header)
+		{
+			e.Row.Cells[1].ColumnSpan = 3;
+			e.Row.Cells[2].Visible = false;
+			e.Row.Cells[3].Visible = false;
+
+			e.Row.Cells[4].ColumnSpan = 3;
+			e.Row.Cells[5].Visible = false;
+			e.Row.Cells[6].Visible = false;
+		}
+
+		if (e.Row.RowType == DataControlRowType.DataRow)
+		{
+			CompanyInfo obj = (CompanyInfo)e.Row.DataItem;
+			e.Row.Cells[1].Text = obj.RegNumber1 + "-" + obj.RegNumber2 + "-" + obj.RegNumber3;
+
+			e.Row.Cells[1].ColumnSpan = 3;
+			e.Row.Cells[2].Visible = false;
+			e.Row.Cells[3].Visible = false;
+
+			e.Row.Cells[4].Text = obj.Phone1 + "-" + obj.Phone2 + "-" + obj.Phone3;
+			e.Row.Cells[4].ColumnSpan = 3;
+			e.Row.Cells[5].Visible = false;
+			e.Row.Cells[6].Visible = false;
+
+			HyperLink colModify = (HyperLink)e.Row.Cells[9].Controls[0];
+			colModify.NavigateUrl = "inputCompany.aspx?companyCode=" + obj.CompanyCode + "&mode=modify";
+			colModify.ImageUrl = "~/images/icon/edit.gif";
+
+
+            HyperLink colDelete = (HyperLink)e.Row.Cells[10].Controls[0];
+            colDelete.NavigateUrl = "#";
+            colDelete.Attributes.Add("onclick", "return confirmDelete('deleteCompany.aspx?companyCode=" + obj.CompanyCode + "');");
+            colDelete.ImageUrl = "~/images/icon/delete.gif";
+
+            //for (int i = 0; i < e.Row.Cells.Count; i++)
+            //{
+            //    if (i < 12)
+            //    {
+            //        e.Row.Cells[i].Attributes.Add("onclick", "window.location='companyView.aspx?companyCode=" + obj.CompanyCode + "';");
+            //        e.Row.Cells[i].Attributes.Add("style", "cursor:hand");
+            //    }
+            //}
+		}
+		if (e.Row.RowType == DataControlRowType.Header)
+		{
+			e.Row.Cells[1].ColumnSpan = 3;
+			e.Row.Cells[2].Visible = false;
+			e.Row.Cells[3].Visible = false;
+
+			e.Row.Cells[4].ColumnSpan = 3;
+			e.Row.Cells[5].Visible = false;
+			e.Row.Cells[6].Visible = false;
+
+			
+		}
+	}
+}
