@@ -24,11 +24,10 @@
                                 <tr class="mb-3">
                                     <td class="contents_title " colspan="1">
                                     </td>
-                                    <td colspan="2" class="contents_title " align="center" style="font-family:Times New Roman; font-size:25px;">
-                                        LOGIN <br/><br/> (로그인이 필요합니다)
-                                        <br/>
-                                        <br />
-                                        <br />
+                                    <td colspan="2" class="contents_title " align="center" style="font-family:Arial; font-size:25px;">
+                                        ACCOUNT LOGIN <br/> (로그인이 필요합니다)
+                                    <br />
+                                     
                                     </td>
                                                                   
                                 </tr>
