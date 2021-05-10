@@ -243,13 +243,13 @@ function checkForm(f){
 	}
 	
 	if(!f.displayName.value){
-		alert('Chọn người gặp mặt (접견자를 선택하여 주십시오)');
+		alert('Chọn người đón tiếp (접견자를 선택하여 주십시오)');
 		//f.visitObjectContents.focus();
 		return false;
 	}
 	
 	if(!f.displayName.value){
-		alert('Chọn người gặp mặt (접견자를 선택하여 주십시오)');
+		alert('Chọn người đón tiếp (접견자를 선택하여 주십시오)');
 		//f.visitObjectContents.focus();
 		return false;
 	}
@@ -349,9 +349,7 @@ function checkForm(f){
 <tr>
 	<td><!--################################ 타이틀, 현재위치 시작 ################################-->
 	<table width="100%" border="0" cellspacing="0" cellpadding="0">
-		<tr>
-			<td height="4" colspan="3"></td>
-		</tr>
+		
 		<tr>
 			<td width="26" height="35"><img
 				src="/COMS/images/basic/icon_02.gif" width="25" height="20"></td>
@@ -365,7 +363,7 @@ function checkForm(f){
 	<!--################################ 타이틀, 현재위치 끝 ################################--></td>
 </tr>
 <tr>
-	<td height="10"></td>
+	
 </tr>
 <tr>
 	<td valign="top">
@@ -375,43 +373,40 @@ function checkForm(f){
 		</tr>
 		<tr>
 			<td style="background-color:#F5F5F5" width="120">
-				Bộ phận <br />(부서명)
+				Bộ phận (부서명)
 			</td>
 			<td style="background-color:#FFFFFF">
 				<asp:Label ID="lblDepartment" runat="server"></asp:Label></td>
 			<td style="background-color:#F5F5F5" width="120">
-				ID<br /> (사번)
+				ID (사번)
 			</td>
 			<td style="background-color:#FFFFFF">
 				<asp:Label ID="lblUpnid" runat="server"></asp:Label></td>
-			<td style="background-color:#F5F5F5" width="120">
-				Nơi làm việc <br />(사업장)
+			<td style="background-color:#F5F5F5" width="150">
+				Nơi làm việc (사업장)
 			</td>
 			<td style="background-color:#FFFFFF">
 				<asp:Label ID="lblOfficeName" runat="server"></asp:Label></td>
 		</tr>
 		<tr>
 			<td style="background-color:#F5F5F5" width="120">
-				Tên <br />(성명)
+				Tên  (성명)
 			</td>
 			<td style="background-color:#FFFFFF">
 				<asp:Label ID="lblDisplayName" runat="server"></asp:Label></td>
 			<td style="background-color:#F5F5F5" width="120">
-				Chức vụ <br />(직급)
+				Chức vụ (직급)
 			</td>
 			<td style="background-color:#FFFFFF">
 				<asp:Label ID="lblTitle" runat="server"></asp:Label></td>
 			<td style="background-color:#F5F5F5" width="120">
-				Liên lạc<br /> (연락처)
+				Liên lạc (연락처)
 			</td>
 			<td style="background-color:#FFFFFF">
 				<asp:Label ID="lblPhone" runat="server"></asp:Label></td>
 		</tr>
 		<%=tableApprove%>
 	</table>
-	
-	<br />
-	<br />
 	<table width="100%" cellpadding="6" cellspacing="1" border="0" style="background-color:#CCCCCC" class="table table-bordered">
 		<tr>
 			<td colspan="6" class="title" style="background-color:#FFFFFF"><strong>Đăng ký thông tin khách thăm (내방 정보 등록)</strong>&nbsp; (check nếu đăng ký đến thăm dài hạn (장기 내방 인 경우 체크) <input type="checkbox" name="longVisit" id="longVisit" value="1" onclick="javascript:change(this)" /> )</td>
@@ -458,15 +453,15 @@ function checkForm(f){
 		</tr>
 		<tr>
 			<td style="background-color:#F5F5F5">
-				Người gặp<br />(접견자)
+				Người đón tiếp<br />(접견자)
 			</td>
 			<td style="background-color:#FFFFFF" class="form-inline">
 				<input type="text" name="displayName" value="<%=interviewUserName%>" class="input form-control col-7 "  readonly />
-				<img src="../../images/icon/searchKor.gif" onclick="newWinByNameByScroll('../employee/searchEmployee.aspx','emplo',1000,500)" style="cursor:hand;vertical-align:middle" alt="Tra cứu người gặp (접견자 조회)" />
+				<img src="../../images/icon/searchKor.gif" onclick="newWinByNameByScroll('../employee/searchEmployee.aspx','emplo',1000,500)" style="cursor:hand;vertical-align:middle" alt="Tra cứu người đón tếp (접견자 조회)" />
 				<input type="hidden" name="upnid" value="<%=interviewUserCode%>" />
 			</td>
 			<td style="background-color:#F5F5F5">
-				Địa điểm gặp<br />(접견장소)
+				Địa điểm đón tiếp<br />(접견장소)
 			</td>
 			<td style="background-color:#FFFFFF">
 				
@@ -500,10 +495,9 @@ function checkForm(f){
 				</td>
 		</tr>
 	</table>
-	<br />
-	<br />
+
 	
-	<table width="100%" style="background-color:#cccccc" cellpadding="6" cellspacing="1" class="table table-bordered">
+	<table width="100%" style="background-color:#cccccc" cellpadding="6" cellspacing="1" class="">
 		<tr style="background-color:#FFFFFF">
 			<td colspan="5" class="title"><strong>Thông tin khách thăm (내방객 정보)</strong></td>
 			<td colspan="2" align="right">

@@ -64,7 +64,7 @@ public partial class main_visit_listVisit : System.Web.UI.Page
 
             e.Row.Cells[1].Text = bll.timeKor(obj.TakeOutItemDataList[0].TakeOutTime); //반출일 ngày mang ra
             e.Row.Cells[2].Text = obj.RequestUserDisplayName; //신청자  người đăng ký 
-            e.Row.Cells[3].Text = StringUtil.GetShortString(obj.CompanyName, 12, "..."); //반출처   địa điểm mang ra
+            e.Row.Cells[3].Text = StringUtil.GetShortString(obj.CompanyName, 100, "..."); //반출처   địa điểm mang ra
             e.Row.Cells[4].Text = StringUtil.GetShortString(obj.RecieveName, 50, "..."); //수령자 người nhận
             e.Row.Cells[5].Text = bll.requireKor(obj.RequireIN); // 반입여부
             e.Row.Cells[6].Text = StringUtil.GetShortString(obj.TakeOutItemDataList[0].TakeOutItemName,18,"..."); //반출항목  hạng mục tài sản ra

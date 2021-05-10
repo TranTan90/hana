@@ -24,10 +24,16 @@
                                 <tr class="mb-3">
                                     <td class="contents_title " colspan="1">
                                     </td>
-                                    <td colspan="2" class="contents_title mb-3">
-                                        Yêu cầu đăng nhập (로그인이 필요합니다)
+                                    <td colspan="2" class="contents_title " align="center" style="font-family:Times New Roman; font-size:25px;">
+                                        LOGIN <br/><br/> (로그인이 필요합니다)
+                                        <br/>
+                                        <br />
+                                        <br />
                                     </td>
+                                                                  
                                 </tr>
+                                <br />
+                                <br />
                                 <tr>
                                     <td>
                                     </td>
@@ -70,7 +76,7 @@
                                     <td align="center" colspan="2">
                                         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="DarkBlue" />
                                         <br />
-                                        <asp:Button ID="submit" runat="server" CssClass="button" OnClick="submit_Click" Text="Đăng nhập (로그인)" />
+                                        <asp:Button ID="submit" runat="server" CssClass="button btn btn-primary" OnClick="submit_Click" Text="Đăng nhập (로그인)" />
                                     </td>
                                 </tr>
                             </table>

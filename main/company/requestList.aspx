@@ -1,5 +1,9 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="requestList.aspx.cs" Inherits="main_company_requestList" Title="Công ty đăng ký (신청 업체)" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
+
 <script language="javascript" type="text/javascript">
 function confirmDelete(url){
     if (confirm('Không thể khôi phục dữ liệu đã bị xóa. \n\nCó chắc chắn xóa không? (한번 삭제된 데이터는 복구가 불가능합니다.\n\n정말로 삭제하시겠습니까?)')) {
@@ -14,6 +18,9 @@ function selectIt(companyName,companyCode){
     self.close();
 }
 </script>
+
+
+
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
 <tr>
 	<td><!--################################ 타이틀, 현재위치 시작 ################################-->
@@ -46,7 +53,7 @@ function selectIt(companyName,companyCode){
                         <td style="width: 260px; height: 27px">
                             Số công ty đã đăng ký (신청된 업체 수):
                             <asp:Label ID="Label1" runat="server"></asp:Label>
-                            개</td>
+                            Công ty (개)</td>
                         <td align="right" style="height: 27px;">
                             <strong>Công ty đang chờ phê duyệt (승인중인 업체입니다). <span style="color:blue">Sau khi quản lý phê duyệt (관리자 승인 후)</span> Hoàn thành đăng ký công ty (업체등록이 완료 됩니다).</strong>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtKey"
@@ -66,7 +73,7 @@ function selectIt(companyName,companyCode){
                 </table>
 				<asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False"
 					CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDataBound="GridView1_RowDataBound" PageSize="50"
-					Width="100%" CssClass="table table -stripe">
+					Width="100%" CssClass="table table-active table-hover">
 					<FooterStyle BackColor="#5D7B9D" ForeColor="White" Font-Bold="True" />
 					<Columns>
 						<asp:BoundField DataField="CompanyName" HeaderText="Tên công ty (회사명)" SortExpression="CompanyName">

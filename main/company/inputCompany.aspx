@@ -91,11 +91,13 @@
             </td>
         </tr>
         <tr>
-            <td style="height: 26px; background-color: #ffffff;" align="center" colspan="2">
+            <td style=" background-color: #ffffff; float:left" >
                 <asp:ImageButton ID="btnSubmit" runat="server" ImageUrl="~/images/icon/write.gif"
                     ValidationGroup="AllValidators" />
+                    </td>
+                    <td align= "left">
                 <a href="#" onclick="history.go(-1);"><img src="../../images/icon/cancel.gif" 
-                    alt="Quay lại (돌아가기)" style="border-style: none; height: 25px;" /></a></td>
+                    alt="Quay lại (돌아가기)" style="border-style: none ;"  /></a></td>
         </tr>
     </table>
 	</td>

@@ -112,7 +112,7 @@ function checkSelectBox(f,ck_count){
 				<td>
 				<asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False"
 		CellPadding="3"
-		PageSize="50" OnRowDataBound="GridView1_RowDataBound1" Width="100%" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" OnPageIndexChanged="GridView1_PageIndexChanged" DataSourceID="ObjectDataSource1" EmptyDataText="Không có nội dung đăng ký (등록 된 내용이 없습니다).">
+		PageSize="50" OnRowDataBound="GridView1_RowDataBound1" Width="100%" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" OnPageIndexChanged="GridView1_PageIndexChanged" DataSourceID="ObjectDataSource1" EmptyDataText="Không có nội dung đăng ký (등록 된 내용이 없습니다)." CssClass="table table-bordered">
 		<FooterStyle BackColor="White" ForeColor="#000066" />
 		<Columns>
 			<asp:BoundField DataField="VisitDataCode" HeaderText="Chọn (선택)" >
@@ -122,18 +122,18 @@ function checkSelectBox(f,ck_count){
 				<ItemStyle HorizontalAlign="Center" />
 			</asp:BoundField>
 			<asp:BoundField DataField="VisitDataCode" HeaderText="Tên (성명)" >
-				<ItemStyle HorizontalAlign="Center" />
+				<ItemStyle HorizontalAlign="Center"  Width="150px"/>
 			</asp:BoundField>
 			<asp:BoundField DataField="VisitDataCode" HeaderText="Ngày, tháng, năm sinh (생년월일)" >
-				<ItemStyle HorizontalAlign="Center" />
+				<ItemStyle HorizontalAlign="Center" Width="100px" />
 			</asp:BoundField>
 			<asp:BoundField DataField="VisitDataCode" HeaderText="Tên công ty (회사명)" >
 				<ItemStyle HorizontalAlign="Center" />
 			</asp:BoundField>
 			<asp:BoundField DataField="VisitDataCode" HeaderText="Bộ phận đăng ký (신청부서)" >
-				<ItemStyle HorizontalAlign="Center" />
+				<ItemStyle HorizontalAlign="Center" Width="100px"/>
 			</asp:BoundField>
-			<asp:BoundField DataField="VisitDataCode" HeaderText="Người gặp mặt (접견자)" >
+			<asp:BoundField DataField="VisitDataCode" HeaderText="Người đón tiếp (접견자)" >
 				<ItemStyle HorizontalAlign="Center" />
 			</asp:BoundField>
 			<asp:BoundField DataField="VisitDataCode" HeaderText="Số xe (차량번호)" >

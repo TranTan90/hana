@@ -112,6 +112,7 @@ function longvisitdisplay(){
     </script>
     <script event="SelectAllLine(approveLine)" for="smartClient">
 	showApproveLine(approveLine);
+<<<<<<< .mine
     </script>
     <object id="smartClient" classid="../../elecApprove/ElecApprove.dll#ElecApprove.ElecLineSelect"
         width="0px" height="0px">
@@ -328,6 +329,379 @@ function longvisitdisplay(){
                 </table>
                 <br />
                 <%--<table width="100%" cellpadding="6" cellspacing="1" style="background-color:#CCCCCC">
+||||||| .r183
+</script>
+
+<object id="smartClient" classid="../../elecApprove/ElecApprove.dll#ElecApprove.ElecLineSelect" width="0px" height="0px">
+<param name="ParamElecDocCode" value="<%=elecApproveCode%>" />
+
+</object>
+	
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+	<td><!--################################ 타이틀, 현재위치 시작 ################################-->
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td height="4" colspan="3"></td>
+		</tr>
+		<tr>
+			<td width="26" height="35"><img
+				src="/COMS/images/basic/icon_02.gif" width="25" height="20"></td>
+			<td class="contents_title">Xem chi tiết đăng ký 신청 (내역 상세보기)</td>
+			<td align="right" class="location">HOME &gt;Xem chi tiết đăng ký (신청 내역 상세보기)</td>
+		</tr>
+		<tr>
+			<td colspan="3" class="title_line"></td>
+		</tr>
+	</table>
+	<!--################################ 타이틀, 현재위치 끝 ################################--></td>
+</tr>
+<tr>
+	<td height="10"></td>
+</tr>
+<tr>
+	<td valign="top">
+	<table width="100%" cellpadding="6" cellspacing="1" style="background-color:#CCCCCC">
+		<tr>
+			<td colspan="6" class="contents_title" style="background-color:#FFFFFF">
+				<img src="../../images/basic/icon_02.gif" alt="icon" style="vertical-align:middle">Thông tin người đăng ký 신청자정보
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color:#F5F5F5" width="150">
+				Bộ phận (부서명)
+			</td>
+			<td style="background-color:#FFFFFF">
+				<asp:Label ID="lblDepartment" runat="server"></asp:Label></td>
+			<td style="background-color:#F5F5F5">
+				ID (사번)
+			</td>
+			<td style="background-color:#FFFFFF">
+				<asp:Label ID="lblUpnid" runat="server"></asp:Label></td>
+			<td style="background-color:#F5F5F5">
+				Nơi làm việc (사업장)
+			</td>
+			<td style="background-color:#FFFFFF">
+				<asp:Label ID="lblOfficeName" runat="server"></asp:Label></td>
+		</tr>
+		<tr>
+			<td style="background-color:#F5F5F5">
+				Tên (성명)
+			</td>
+			<td style="background-color:#FFFFFF">
+				<asp:Label ID="lblDisplayName" runat="server"></asp:Label></td>
+			<td style="background-color:#F5F5F5">
+				Chức vụ (직급)
+			</td>
+			<td style="background-color:#FFFFFF">
+				<asp:Label ID="lblTitle" runat="server"></asp:Label></td>
+			<td style="background-color:#F5F5F5">
+				Liên lạc (연락처)
+			</td>
+			<td style="background-color:#FFFFFF">
+				<asp:Label ID="lblPhone" runat="server"></asp:Label></td>
+		</tr>
+	</table>
+	<br />
+	<table width="100%" cellpadding="6" cellspacing="1" border="0" style="background-color:#CCCCCC">
+		<tr>
+			<td colspan="6" class="contents_title" style="background-color:#FFFFFF">
+				<img src="../../images/basic/icon_02.gif" alt="icon" style="vertical-align:middle">Thông tin phê duyệt (결재정보)
+			</td>
+		</tr>
+		
+		<tr>
+			<td style="background-color:#F5F5F5;" width="150">
+				Tiêu đề dự thảo (기안제목)
+			</td>
+			<td style="background-color:#FFFFFF;">
+				<%=title%><%=reqEmploeeDisplayName%>
+			</td>
+			<td style="background-color:#F5F5F5;">
+				Mức bảo an [Thời hạn lưu trữ] (보안등급 [보존년한])
+			</td>
+			<td style="background-color:#FFFFFF;">
+				대내비(1 năm 1년)</td>
+		</tr>
+		<tr id="approveLineRow" style="display:none">
+			<td style="background-color:#F5F5F5" width="15%">
+				Luồng phê duyệt (결재선)
+			</td>
+			<td style="background-color:#FFFFFF" width="35%">
+				<label id="lbCon"></label>
+			</td>
+			<td style="background-color:#F5F5F5" width="15%">
+				Người thông báo (통보자)
+			</td>
+			<td style="background-color:#FFFFFF" width="35%">
+				<label id="lbRef"></label>
+			</td>
+		</tr>
+	</table>
+	<br />
+	
+	<table width="100%" cellpadding="6" cellspacing="1" border="0">
+		<tr>
+			<td bgcolor="#FFFFFF" align="center">
+				<input type="button" value="Xem trạng thái phê duyệt (결재상태 보기)" style="cursor:hand" onclick="showApproveStatus(document.forms[0].elecApproveCode.value)" runat="server" id="btnElectStatus" />
+				<input type="button" value="Gửi phê duyệt (결재상신)" style="cursor:hand" onclick="approveSelect()" runat="server" id="btnElecApproveLine"/>
+				<!--<input type="button" value="Gửi phê duyệt 결재상신" onClick="confirmSave()" id="btnApproveStart" runat="server"/>-->
+				<input type="button" value="Quay lại (돌아가기)" onclick="history.go(-1)" />
+			</td>
+		</tr>
+	</table>
+	<input type="hidden" name="elecApproveCode" value="<%=elecApproveCode%>" />
+	<input type="hidden" name="visitDataCode" value="<%=Request["visitDataCode"]%>" />
+	<br />
+	<table width="100%" cellpadding="6" cellspacing="1" style="background-color:#CCCCCC">
+		<tr>
+			<td colspan="4" class="contents_title" style="background-color:#FFFFFF">
+				<img src="../../images/basic/icon_02.gif" alt="icon" style="vertical-align:middle">Thông tin khách thăm (내방 정보)
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color:#F5F5F5" width="150">
+				Mục đích thăm (방문 목적)
+			</td>
+			<td style="background-color:#FFFFFF">
+				<asp:Label ID="lblVisitObjectName" runat="server"></asp:Label></td>
+			<td style="background-color:#F5F5F5">
+				Mục đích chi tiết (세부 목적)
+			</td>
+			<td style="background-color:#FFFFFF">
+				<asp:Label ID="lblVisitObjectContents" runat="server"></asp:Label></td>
+		</tr>
+		<tr>
+			<td style="background-color:#F5F5F5">
+				Người cần gặp (접견자)
+			</td>
+			<td style="background-color:#FFFFFF">
+				<asp:Label ID="lblInterviewUserName" runat="server"></asp:Label></td>
+			<td style="background-color:#F5F5F5">
+				Nơi gặp (접견장소)
+			</td>
+			<td style="background-color:#FFFFFF">
+				<asp:Label ID="lblOfficeNameDetail" runat="server"></asp:Label></td>
+		</tr>
+		<tr>
+			<td style="background-color:#F5F5F5">
+				Số xe (차량 번호)
+			</td>
+			<td style="background-color:#FFFFFF" colspan="3">
+				<asp:Label ID="lblCarNumber" runat="server"></asp:Label></td>
+		</tr>
+		<asp:Panel ID="pnlSecurity" runat="server">
+		<tr>
+			<td style="background-color:#F5F5F5">
+				Thời gian vào (입문시간)
+			</td>
+			<td style="background-color:#FFFFFF">
+				<asp:Label ID="lblInTime" runat="server"></asp:Label></td>
+			<td style="background-color:#F5F5F5">
+				Thời gian ra (출문시간)
+			</td>
+			<td style="background-color:#FFFFFF">
+				<asp:Label ID="lblOutTime" runat="server"></asp:Label></td>
+		</tr>
+		<tr id="longVisit" style="display:none">
+			<td style="background-color:#F5F5F5">
+				Thời hạn thăm dài hạn (장기내방기간)
+			</td>
+			<td style="background-color:#FFFFFF" colspan="3">
+				<asp:Label ID="lblLongVisit" runat="server"></asp:Label></td>
+		</tr>
+		</asp:Panel>
+	</table>
+	<br />
+	
+	<%--<table width="100%" cellpadding="6" cellspacing="1" style="background-color:#CCCCCC">
+=======
+</script>
+
+<object id="smartClient" classid="../../elecApprove/ElecApprove.dll#ElecApprove.ElecLineSelect" width="0px" height="0px">
+<param name="ParamElecDocCode" value="<%=elecApproveCode%>" />
+
+</object>
+	
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+	<td><!--################################ 타이틀, 현재위치 시작 ################################-->
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td height="4" colspan="3"></td>
+		</tr>
+		<tr>
+			<td width="26" height="35"><img
+				src="/COMS/images/basic/icon_02.gif" width="25" height="20"></td>
+			<td class="contents_title">Xem chi tiết đăng ký 신청 (내역 상세보기)</td>
+			<td align="right" class="location">HOME &gt;Xem chi tiết đăng ký (신청 내역 상세보기)</td>
+		</tr>
+		<tr>
+			<td colspan="3" class="title_line"></td>
+		</tr>
+	</table>
+	<!--################################ 타이틀, 현재위치 끝 ################################--></td>
+</tr>
+<tr>
+	<td height="10"></td>
+</tr>
+<tr>
+	<td valign="top">
+	<table width="100%" cellpadding="6" cellspacing="1" style="background-color:#CCCCCC">
+		<tr>
+			<td colspan="6" class="contents_title" style="background-color:#FFFFFF">
+				<img src="../../images/basic/icon_02.gif" alt="icon" style="vertical-align:middle">Thông tin người đăng ký 신청자정보
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color:#F5F5F5" width="150">
+				Bộ phận (부서명)
+			</td>
+			<td style="background-color:#FFFFFF">
+				<asp:Label ID="lblDepartment" runat="server"></asp:Label></td>
+			<td style="background-color:#F5F5F5">
+				ID (사번)
+			</td>
+			<td style="background-color:#FFFFFF">
+				<asp:Label ID="lblUpnid" runat="server"></asp:Label></td>
+			<td style="background-color:#F5F5F5">
+				Nơi làm việc (사업장)
+			</td>
+			<td style="background-color:#FFFFFF">
+				<asp:Label ID="lblOfficeName" runat="server"></asp:Label></td>
+		</tr>
+		<tr>
+			<td style="background-color:#F5F5F5">
+				Tên (성명)
+			</td>
+			<td style="background-color:#FFFFFF">
+				<asp:Label ID="lblDisplayName" runat="server"></asp:Label></td>
+			<td style="background-color:#F5F5F5">
+				Chức vụ (직급)
+			</td>
+			<td style="background-color:#FFFFFF">
+				<asp:Label ID="lblTitle" runat="server"></asp:Label></td>
+			<td style="background-color:#F5F5F5">
+				Liên lạc (연락처)
+			</td>
+			<td style="background-color:#FFFFFF">
+				<asp:Label ID="lblPhone" runat="server"></asp:Label></td>
+		</tr>
+	</table>
+	<br />
+	<table width="100%" cellpadding="6" cellspacing="1" border="0" style="background-color:#CCCCCC">
+		<tr>
+			<td colspan="6" class="contents_title" style="background-color:#FFFFFF">
+				<img src="../../images/basic/icon_02.gif" alt="icon" style="vertical-align:middle">Thông tin phê duyệt (결재정보)
+			</td>
+		</tr>
+		
+		<tr>
+			<td style="background-color:#F5F5F5;" width="150">
+				Tiêu đề dự thảo (기안제목)
+			</td>
+			<td style="background-color:#FFFFFF;">
+				<%=title%><%=reqEmploeeDisplayName%>
+			</td>
+			<td style="background-color:#F5F5F5;">
+				Mức bảo an [Thời hạn lưu trữ] (보안등급 [보존년한])
+			</td>
+			<td style="background-color:#FFFFFF;">
+				대내비(1 năm 1년)</td>
+		</tr>
+		<tr id="approveLineRow" style="display:none">
+			<td style="background-color:#F5F5F5" width="15%">
+				Luồng phê duyệt (결재선)
+			</td>
+			<td style="background-color:#FFFFFF" width="35%">
+				<label id="lbCon"></label>
+			</td>
+			<td style="background-color:#F5F5F5" width="15%">
+				Người thông báo (통보자)
+			</td>
+			<td style="background-color:#FFFFFF" width="35%">
+				<label id="lbRef"></label>
+			</td>
+		</tr>
+	</table>
+	<br />
+	
+	<table width="100%" cellpadding="6" cellspacing="1" border="0">
+		<tr>
+			<td bgcolor="#FFFFFF" align="center">
+				<input type="button" value="Xem trạng thái phê duyệt (결재상태 보기)" style="cursor:hand" onclick="showApproveStatus(document.forms[0].elecApproveCode.value)" runat="server" id="btnElectStatus" />
+				<input type="button" value="Gửi phê duyệt (결재상신)" style="cursor:hand; color:Blue" onclick="approveSelect()" runat="server" id="btnElecApproveLine"/>
+				<!--<input type="button" value="Gửi phê duyệt 결재상신" onClick="confirmSave()" id="btnApproveStart" runat="server"/>-->
+				<input type="button" value="Quay lại (돌아가기)" onclick="history.go(-1)" />
+			</td>
+		</tr>
+	</table>
+	<input type="hidden" name="elecApproveCode" value="<%=elecApproveCode%>" />
+	<input type="hidden" name="visitDataCode" value="<%=Request["visitDataCode"]%>" />
+	<br />
+	<table width="100%" cellpadding="6" cellspacing="1" style="background-color:#CCCCCC">
+		<tr>
+			<td colspan="4" class="contents_title" style="background-color:#FFFFFF">
+				<img src="../../images/basic/icon_02.gif" alt="icon" style="vertical-align:middle">Thông tin khách thăm (내방 정보)
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color:#F5F5F5" width="150">
+				Mục đích thăm (방문 목적)
+			</td>
+			<td style="background-color:#FFFFFF">
+				<asp:Label ID="lblVisitObjectName" runat="server"></asp:Label></td>
+			<td style="background-color:#F5F5F5">
+				Mục đích chi tiết (세부 목적)
+			</td>
+			<td style="background-color:#FFFFFF">
+				<asp:Label ID="lblVisitObjectContents" runat="server"></asp:Label></td>
+		</tr>
+		<tr>
+			<td style="background-color:#F5F5F5">
+				Người đón tiếp (접견자)
+			</td>
+			<td style="background-color:#FFFFFF">
+				<asp:Label ID="lblInterviewUserName" runat="server"></asp:Label></td>
+			<td style="background-color:#F5F5F5">
+				Nơi đón tiếp (접견장소)
+			</td>
+			<td style="background-color:#FFFFFF">
+				<asp:Label ID="lblOfficeNameDetail" runat="server"></asp:Label></td>
+		</tr>
+		<tr>
+			<td style="background-color:#F5F5F5">
+				Số xe (차량 번호)
+			</td>
+			<td style="background-color:#FFFFFF" colspan="3">
+				<asp:Label ID="lblCarNumber" runat="server"></asp:Label></td>
+		</tr>
+		<asp:Panel ID="pnlSecurity" runat="server">
+		<tr>
+			<td style="background-color:#F5F5F5">
+				Thời gian vào (입문시간)
+			</td>
+			<td style="background-color:#FFFFFF">
+				<asp:Label ID="lblInTime" runat="server"></asp:Label></td>
+			<td style="background-color:#F5F5F5">
+				Thời gian ra (출문시간)
+			</td>
+			<td style="background-color:#FFFFFF">
+				<asp:Label ID="lblOutTime" runat="server"></asp:Label></td>
+		</tr>
+		<tr id="longVisit" style="display:none">
+			<td style="background-color:#F5F5F5">
+				Thời hạn thăm dài hạn (장기내방기간)
+			</td>
+			<td style="background-color:#FFFFFF" colspan="3">
+				<asp:Label ID="lblLongVisit" runat="server"></asp:Label></td>
+		</tr>
+		</asp:Panel>
+	</table>
+	<br />
+	
+	<%--<table width="100%" cellpadding="6" cellspacing="1" style="background-color:#CCCCCC">
+>>>>>>> .r192
 	<tr>
 		<td colspan="6" class="contents_title" style="background-color:#FFFFFF">
 			<img src="../../images/basic/icon_02.gif" alt="icon" style="vertical-align:middle"> Tệp đính kèm (첨부 파일)

@@ -83,7 +83,7 @@ function updateCategory(){
 
 var no=1;
 var displayCellCount=<%=displayCellCount%>;
-var defaultCellCount=5;
+var defaultCellCount=1;
 
 // 업체 검색 완료 hoàn thành tìm kiếm công ty
 function addNameID(companyName,companyCode){
@@ -413,9 +413,7 @@ function checkForm(f){
 	</table>
 	<!--################################ 타이틀, 현재위치 끝 ################################--></td>
 </tr>
-<tr>
-	<td height="10"></td>
-</tr>
+
 <tr>
 	<td valign="top">
 	<table width="100%" cellpadding="6" cellspacing="1" style="background-color:#CCCCCC" class="table table-bordered">
@@ -424,47 +422,47 @@ function checkForm(f){
 		</tr>
 		<tr>
 			<td style="background-color:#F5F5F5">
-				Bộ phận<br />(부서명)
+				Bộ phận(부서명)
 			</td>
 			<td style="background-color:#FFFFFF">
 				<asp:Label ID="lblDepartment" runat="server"></asp:Label></td>
 			<td style="background-color:#F5F5F5">
-				ID<br />(사 번)
+				ID(사 번)
 			</td>
 			<td style="background-color:#FFFFFF">
 				<asp:Label ID="lblUpnid" runat="server"></asp:Label></td>
 			<td style="background-color:#F5F5F5">
-				Nơi làm việc<br />(사업장)
+				Nơi làm việc(사업장)
 			</td>
 			<td style="background-color:#FFFFFF">
 				<asp:Label ID="lblOfficeName" runat="server"></asp:Label></td>
 		</tr>
 		<tr>
 			<td style="background-color:#F5F5F5">
-				Tên<br />(성명)
+				Tên(성명)
 			</td>
 			<td style="background-color:#FFFFFF">
 				<asp:Label ID="lblDisplayName" runat="server"></asp:Label></td>
 			<td style="background-color:#F5F5F5">
-				Chức vụ<br />(직급)
+				Chức vụ(직급)
 			</td>
 			<td style="background-color:#FFFFFF">
 				<asp:Label ID="lblTitle" runat="server"></asp:Label></td>
 			<td style="background-color:#F5F5F5">
-				Liên lạc<br />(연락처)
+				Liên lạc(연락처)
 			</td>
 			<td style="background-color:#FFFFFF">
 				<asp:Label ID="lblPhone" runat="server"></asp:Label></td>
 		</tr>
 	</table>
 	
-	<br />
+	
 	<%=tableApprove%>
 
     <%-- chỉnh sửa giao diện cho chữ tiếng hàn xuống dòng
         phạm thị thu hiền 29/01/2021
     --%>
-	<br />
+	
 	<table width="100%" cellpadding="6" cellspacing="1" border="0" style="background-color:#CCCCCC" class="table table-bordered">
 		<tr>
 			<td colspan="6" class="title" style="background-color:#FFFFFF">
@@ -606,10 +604,7 @@ function checkForm(f){
 			</td>
 		</tr>
 	</table>
-	<br />
-	<br />
-	
-	<table width="100%" style="background-color:#cccccc" class="table table-bordered">
+	<table width="100%" style="background-color:#cccccc" class="">
 		<tr style="background-color:#FFFFFF">
 			<td colspan="5" class="title">Thông tin vật phẩm mang ra cổng (반출 물품 정보)</td>
 			<td colspan="2" align="right">
@@ -633,10 +628,8 @@ function checkForm(f){
 			</td>
 		</tr>
 	</table>
-	<br />
-	<br />
     <%--2021-03-26 Nguyen Van An: 반출신정할 때 첨부 파일 추가 가능 _ 박민수 차장 요정--%>
-	<table width="100%" cellpadding="6" cellspacing="1" border="0" style="background-color:#CCCCCC" class="table table-stripe">
+	<table width="100%" cellpadding="6" cellspacing="1" border="0" style="background-color:#CCCCCC" class="">
 		<tr>
 			<td colspan="2" class="title" style="background-color:#FFFFFF"><strong>File đính kèm (첨부 파일)</strong></td>
 		</tr>
